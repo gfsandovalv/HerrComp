@@ -1,0 +1,19 @@
+#include<iostream>
+#include<cmath>
+double cosine(double x);
+int main(int argc, char *argv[])
+{
+  
+  return 0;
+}
+
+double cosine(double x){
+  double a_n=1; //a_0=1, el valor inicial de la sucesión
+  double sum=0;
+for (int i = 0; i < N; ++i)
+  {
+    sum += a_n;
+    a_n=-x*x*a_n/(2*i+2)/(2*i+1);
+  }
+ return sum;
+}
