@@ -11,23 +11,21 @@ int main(int argc, char *argv[])
   //  std::cout<<std::scientific<<std::setprecision(20)<<std::cos(x)<<" "<<cosine(x,100)<<" "<<std::cos(x)-cosine(x,100)<<"\n";
   double x_0=0.0;
   double dx=0.1;
-    std::cout<<"set terminal gif animate"<<"\n";
-    std::cout<<"set output 'cosine.gif'"<<"\n";
-    std::cout<<"set yr [0:1.0]"<<"\n";
+  //    std::cout<<"set terminal gif animate"<<"\n";
+  //std::cout<<"set output 'cosine.gif'"<<"\n";
+  //std::cout<<"set yr [0:1.0]"<<"\n";
   do
     {
       int n=1; //el valor 0-ésimo ya fue calculado en la definición.
-      std::cout<<"plot '-'" <<" "<< "u 1:2 t "<<"'"<<x_0<<"'"<<"\n";
       do
 	{
 	  double a=cosine(x_0,n);
 	  dif=std::fabs((a-cos_ref)/(cos_ref));
-	
-	  std::cout<<n<<"\t"<<std::scientific<<std::setprecision(17)<<dif<<"\n";
+	  std::cout<<x_0<<"\t"<<n<<"\t"<<std::scientific<<std::setprecision(17)<<dif<<"\n";
 	  n++;
-	} while (n<20);
-      x_0+=dx;
-      std::cout<<"e"<<"\n";
+	} while (n<100);
+	  x_0+=dx;
+
     } while (x_0<=x);
   return 0;
 }
